@@ -19,3 +19,10 @@ model Card {
   updatedAt  DateTime
 }
 
+model User {
+  id  Int @id @default(autoincrement())
+  name  String  @default("")
+  email String  @default("")
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime
+}
