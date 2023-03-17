@@ -23,6 +23,7 @@ model List {
   id Int @id @default(autoincrement())
   title String @default("")
   userId Int
+  user User @relation(fields: [userId], references: [id])
   createdAt DateTime @default(now())
   updatedAt DateTime
 }
