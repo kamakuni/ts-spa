@@ -14,7 +14,7 @@ model Card {
   id  Int @id @default(autoincrement())
   title String @default("")
   body  String @default("")
-  list List @relation(fields: [listId], references: [id])
+  list List @relation(fields: [listId], references: [id], onDelete: Cascade)
   listId Int
   createdAt  DateTime @default(now())
   updatedAt  DateTime
@@ -23,7 +23,7 @@ model Card {
 model List {
   id Int @id @default(autoincrement())
   title String @default("")
-  user User @relation(fields: [userId], references: [id])
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
   userId Int
   createdAt DateTime @default(now())
   updatedAt DateTime
