@@ -1,9 +1,13 @@
 import { Injectable } from '@nestjs/common';
+import { PrismaService } from 'src/prisma.service';
 import { CreateCardDto } from './dto/create-card.dto';
 import { UpdateCardDto } from './dto/update-card.dto';
 
 @Injectable()
 export class CardsService {
+
+  constructor(private prisma: PrismaService) {}
+
   create(createCardDto: CreateCardDto) {
     return 'This action adds a new card';
   }

@@ -4,6 +4,9 @@ import { UpdateListDto } from './dto/update-list.dto';
 
 @Injectable()
 export class ListsService {
+
+  constructor(private prisma: PrismaService) {}
+
   create(createListDto: CreateListDto) {
     return 'This action adds a new list';
   }
