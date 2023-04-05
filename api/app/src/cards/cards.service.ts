@@ -32,6 +32,10 @@ export class CardsService {
     });
   }
 
+  async createCard(data: Prisma.CardCreateInput): Promise<Card> {
+    return this.prisma.card.create({data});
+  }
+
   create(createCardDto: CreateCardDto) {
     return 'This action adds a new card';
   }

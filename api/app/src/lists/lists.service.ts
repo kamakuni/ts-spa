@@ -37,7 +37,7 @@ export class ListsService {
   }
 
   async createList(data: Prisma.ListCreateInput): Promise<List> {
-    return this.prisma.list.create({data})
+    return this.prisma.list.create({data});
   }
 
   findAll() {
