@@ -32,6 +32,23 @@ export class UsersService {
     });
   }
 
+  async createUser(data: Prisma.UserCreateInput): Promise<User> {
+    return this.prisma.user.create({
+      data,
+    });
+  }
+
+  async updateUser(params: {
+    where: Prisma.UserWhereUniqueInput;
+    data: Prisma.UserUpdateInput;
+  }): Promise<User> {
+    const { where, data } = params;
+    return this.prisma.user.update({
+      data,
+      where
+    })
+  }
+
   create(createUserDto: CreateUserDto) {
     return 'This action adds a new user';
   }
