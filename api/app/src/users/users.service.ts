@@ -49,6 +49,12 @@ export class UsersService {
     })
   }
 
+  async deleteUser(where: Prisma.UserWhereUniqueInput): Promise<User> {
+    return this.prisma.user.delete({
+      where,
+    });
+  }
+
   create(createUserDto: CreateUserDto) {
     return 'This action adds a new user';
   }
