@@ -40,6 +40,18 @@ export class ListsService {
     return this.prisma.list.create({data});
   }
 
+  async updateList(params: {where: Prisma.ListWhereUniqueInput; data: Prisma.ListUpdateInput;}): Promise<List> {
+    const { where, data } = params;
+    return this.prisma.list.update({
+      data,
+      where,
+    });
+  }
+
+  async deleteList(where: Prisma.ListWhereUniqueInput): Promise<List> {
+    return this.prisma.list.delete({ where })
+  }
+
   findAll() {
     return `This action returns all lists`;
   }
